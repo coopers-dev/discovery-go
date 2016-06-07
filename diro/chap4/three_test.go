@@ -3,10 +3,9 @@ package chap4
 import (
 	"strings"
 	"fmt"
-	"testing"
 )
 
-func TestEvalReplaceAll(t *testing.T) {
+func ExampleEvalReplaceAll() {
 	in := strings.Join([] string{
 		"다들 그 동안 고생이 많았다.",
 		"첫째는 분당에 있는 { 2 ** 4 * 3 }평 아파트를 갖거라.",

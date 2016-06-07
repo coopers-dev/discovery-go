@@ -5,7 +5,6 @@ import (
 	"regexp"
 	"strings"
 	"strconv"
-	"fmt"
 )
 
 type BinOp func(int, int) int
@@ -35,8 +34,6 @@ func NewEvaluator(opMap map[string]BinOp, prec PrecMap) func(expr string) int {
 }
 
 func ExampleNewEvaluator(expr string) int {
-	fmt.Println("#######")
-	fmt.Print(expr + " = ")
 
 	eval := NewEvaluator(map[string]BinOp {
 		"**": func(a, b int) int {
@@ -69,8 +66,6 @@ func ExampleNewEvaluator(expr string) int {
 		"-": NewStrSet("**", "*", "/", "mod", "+", "-"),
 	})
 
-	fmt.Println(eval(expr))
-	fmt.Println("#######")
 
 
 	return eval(expr)
